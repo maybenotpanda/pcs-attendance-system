@@ -1,38 +1,22 @@
-export const formatDate = (date, isTime = false, option = { separatorType: ' ', format: 'ddmmyyyy', lang: 'id' }) => {
-	if (!date) {
-		return 'Belum tersedia'
-	}
+export function formatDate(dateString) {
+	if (!dateString) return ''
 
-	let resultDate
-	const convert = new Date(date)
-	const separator = option.separatorType === 'Slash' ? '/' : option.separatorType === 'Dash' ? '-' : ' '
+	const inputDate = new Date(dateString)
+	const today = new Date()
 
-	const day = String(convert.getUTCDate()).padStart(2, '0')
-	const month = String(convert.getUTCMonth() + 1).padStart(2, '0')
-	const year = convert.getUTCFullYear()
-	const hours = String(convert.getUTCHours()).padStart(2, '0')
-	const minutes = String(convert.getUTCMinutes()).padStart(2, '0')
-	const seconds = String(convert.getUTCSeconds()).padStart(2, '0')
+	inputDate.setHours(0, 0, 0, 0)
+	today.setHours(0, 0, 0, 0)
 
-	if (option.format === 'ddMMyyyy') {
-		resultDate = `${day}${separator}${month}${separator}${year}`
-	} else {
-		resultDate = `${day}${separator}${month}${separator}${year}`
-	}
+	const diffTime = today.getTime() - inputDate.getTime()
+	const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24))
 
-	if (isTime) {
-		resultDate = `${resultDate} ${hours}:${minutes}:${seconds}`
-	}
+	if (diffDays === 0) return 'Today'
+	if (diffDays === 1) return 'Yesterday'
+	if (diffDays < 7) return `${diffDays} days ago`
 
-	return resultDate
+	return inputDate.toLocaleDateString('en-US', {
+		day: '2-digit',
+		month: 'short',
+		year: 'numeric'
+	})
 }
-
-/**
- *
- * cara penggunaannya seperti dibawah ini
- * @params date = tanggal yang diperoleh
- * @params true = untuk menampilkan waktu
- * @params separatorType = bentuk yang digunakan
- * convertDate(date, true, { separatorType: 'Slash' }
- *
- **/
