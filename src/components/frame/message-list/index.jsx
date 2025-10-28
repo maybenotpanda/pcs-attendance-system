@@ -10,8 +10,7 @@ import CardMessage from 'components/fragments/card-message'
 const MessageList = (props) => {
 	// ! props
 	const { data } = props
-
-	console.log(data)
+	
 	return (
 		<div className="grid">
 			<Each
