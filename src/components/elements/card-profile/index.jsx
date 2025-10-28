@@ -8,6 +8,7 @@ const CardProfile = () => {
 				<img
 					src="https://images.pexels.com/photos/39866/entrepreneur-startup-start-up-man-39866.jpeg"
 					className="rounded-full w-16 h-16"
+					alt="foto"
 				/>
 				<div className="grid gap-1">
 					<p className="text-white font-semibold">Duck</p>
