@@ -11,11 +11,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: '#FCC235',
-        secondary: '#FAF8F0',
-        // background: '',
+        primary: '#E9232B',
+        secondary: '#C6115F',
+        background: '#FFF',
         black: '#1c1c1c',
-        // white: '',
+        white: '#FFF',
         success: {
           70: "#317159",
           60: "#429777",

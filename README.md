@@ -1,4 +1,4 @@
-# Your Project Awesome 🚀
+# PCS Attendance System 🚀
 
 ## ✨ Starting
 
@@ -26,28 +26,6 @@ yarn install
 npm start
 ```
 
-or
-
-```bash
-pm2 start app.local.config.js
-```
-
-### Server Staging
-
-> for staging
-
-```bash
-pm2 start app.dev.config.js
-```
-
-### Server Production
-
-> for production
-
-```bash production
-pm2 start app.prod.config.js
-```
-
 ## 🍔 Build
 
 Deploy
@@ -58,9 +36,7 @@ npm run build
 
 ## 📦 Using Package manager
 
-- 🌈 [Ant Design.](https://ant.design/)
 - 🛡 [Axios](https://axios-http.com/docs/intro)
-- 📖 [Lodash.](https://lodash.com/)
 - 🗂️ [Redux.](https://redux.js.org/introduction/getting-started)
 - 🌍 [React Router DOM.](https://reactrouter.com/en/main)
 - 🎨 [Tailwind CSS.](https://tailwindcss.com/docs/installation)
